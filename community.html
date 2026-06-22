@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="小鹏陪伴空间用户社区" />
+  <title>用户社区 - 小鹏陪伴空间</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="community-page">
+  <nav class="site-nav" aria-label="主导航">
+    <a class="brand" href="./index.html">
+      <img class="brand-logo" src="./assets/xpeng-logo.png" alt="XPENG 小鹏汽车" />
+      <span>陪伴空间</span>
+    </a>
+    <div class="nav-links">
+      <a href="./index.html#experiences">互动体验</a>
+      <a href="./upload.html?mode=pet">内容创作</a>
+      <a class="active" href="./community.html">用户社区</a>
+    </div>
+    <a class="nav-action" href="./login.html">开始体验</a>
+  </nav>
+
+  <main class="community-main">
+    <header class="community-hero">
+      <span class="section-kicker">XPENG COMMUNITY</span>
+      <h1>分享此刻，发现新的陪伴灵感。</h1>
+      <p>记录互动故事、参与每周挑战，也把你的创作经验分享给更多陪伴者。</p>
+    </header>
+
+    <section class="community-section" id="community">
+      <div class="section-heading community-title-row">
+        <div>
+          <span class="section-kicker">陪伴者社区</span>
+          <h2>今天，也有新的温暖发生</h2>
+        </div>
+        <div class="community-stats">
+          <span><strong id="checkinCount">2,846</strong> 今日打卡</span>
+          <button id="checkinBtn" type="button">今日打卡 +1</button>
+        </div>
+      </div>
+
+      <div class="challenge-card">
+        <div class="challenge-icon">7</div>
+        <div>
+          <small>本周互动挑战</small>
+          <h3>连续 7 天记录陪伴瞬间</h3>
+          <p>发布带有「#七日陪伴」的话题内容，解锁限定投影光效徽章。</p>
+        </div>
+        <div class="challenge-progress">
+          <span>3 / 7 天</span>
+          <i><b></b></i>
+        </div>
+      </div>
+
+      <div class="community-toolbar">
+        <div class="topic-filters" role="group" aria-label="社区内容筛选">
+          <button class="active" data-filter="all" type="button">推荐</button>
+          <button data-filter="pet" type="button">萌宠日常</button>
+          <button data-filter="family" type="button">亲友时光</button>
+          <button data-filter="tips" type="button">互动技巧</button>
+        </div>
+        <button class="publish-button" id="openComposerBtn" type="button">＋ 发布动态</button>
+      </div>
+
+      <form class="composer" id="composer" hidden>
+        <div class="composer-head">
+          <strong>分享一条陪伴动态</strong>
+          <button id="closeComposerBtn" type="button" aria-label="关闭">×</button>
+        </div>
+        <textarea id="postContent" maxlength="120" placeholder="记录今天发生的温暖小事…"></textarea>
+        <div class="composer-foot">
+          <select id="postTopic" aria-label="选择话题">
+            <option value="pet"># 萌宠日常</option>
+            <option value="family"># 亲友时光</option>
+            <option value="tips"># 互动技巧</option>
+          </select>
+          <span><b id="postLength">0</b>/120</span>
+          <button class="primary-button" type="submit">发布</button>
+        </div>
+      </form>
+
+      <div class="community-grid" id="communityGrid">
+        <article class="community-card" data-category="pet">
+          <div class="post-image"><img src="./assets/pet-interaction.png" alt="宠物互动分享" /><span>萌宠日常</span></div>
+          <div class="post-body">
+            <div class="user-row"><span class="avatar avatar-blue">柚</span><div><strong>柚子和豆包</strong><small>12 分钟前</small></div></div>
+            <p>豆包第一次对着投影里的自己握手，愣了两秒又开心地摇起尾巴。</p>
+            <div class="post-actions"><button class="like-button" type="button">♡ <span>128</span></button><button class="save-button" type="button">收藏</button></div>
+          </div>
+        </article>
+
+        <article class="community-card" data-category="family">
+          <div class="post-image"><img src="./assets/family-interaction.png" alt="亲友互动分享" /><span>亲友时光</span></div>
+          <div class="post-body">
+            <div class="user-row"><span class="avatar avatar-pink">林</span><div><strong>林间的风</strong><small>1 小时前</small></div></div>
+            <p>把小时候全家一起玩游戏的片段做成了互动视频，周末在车里重温了一遍。</p>
+            <div class="post-actions"><button class="like-button" type="button">♡ <span>96</span></button><button class="save-button" type="button">收藏</button></div>
+          </div>
+        </article>
+
+        <article class="community-card text-post" data-category="tips">
+          <div class="tip-cover">
+            <span>互动技巧 03</span>
+            <strong>拍摄素材时<br />让主体完整入镜</strong>
+            <small>干净背景能显著提升生成效果</small>
+          </div>
+          <div class="post-body">
+            <div class="user-row"><span class="avatar avatar-dark">映</span><div><strong>光影实验室</strong><small>官方 · 昨天</small></div></div>
+            <p>推荐使用正面、光线均匀的照片，避免遮挡面部和四肢。</p>
+            <div class="post-actions"><button class="like-button" type="button">♡ <span>342</span></button><button class="save-button" type="button">收藏</button></div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <img src="./assets/xpeng-logo.png" alt="" />
+    <span>XPENG · 用影像连接每一份珍贵陪伴</span>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="./community.js"></script>
+</body>
+</html>

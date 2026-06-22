@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="上传图片，一键生成陪伴互动视频" />
+  <title>内容创作 - 小鹏陪伴空间</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="creator-page">
+  <nav class="site-nav" aria-label="主导航">
+    <a class="brand" href="./index.html"><img class="brand-logo" src="./assets/xpeng-logo.png" alt="XPENG" /><span>陪伴空间</span></a>
+    <div class="nav-links">
+      <a href="./index.html#experiences">互动体验</a>
+      <a class="active" href="./upload.html?mode=pet">内容创作</a>
+      <a href="./community.html">用户社区</a>
+    </div>
+    <a class="nav-action" href="./login.html">开始体验</a>
+  </nav>
+
+  <main class="creator-main">
+    <header class="creator-header">
+      <span class="mode-pill" id="creatorMode">宠物视频创作</span>
+      <h1>上传一张照片，<br />让它动起来。</h1>
+      <p>选择主体清晰的图片，一键生成自然、生动的陪伴互动视频。</p>
+      <div class="mode-switch">
+        <a data-mode-link="pet" href="./upload.html?mode=pet">宠物</a>
+        <a data-mode-link="family" href="./upload.html?mode=family">亲友</a>
+      </div>
+    </header>
+
+    <section class="creator-workspace">
+      <div class="creator-steps">
+        <article class="creator-card">
+          <div class="card-number">01</div>
+          <h2>上传图片</h2>
+          <p>支持 JPG、PNG，建议使用正面、光线均匀且主体完整的图片。</p>
+          <label class="creator-upload" for="fileInput" id="uploadBox">
+            <input id="fileInput" type="file" accept="image/*" />
+            <div id="creatorPlaceholder"><span>＋</span><strong>点击或拖拽上传图片</strong><small>文件大小不超过 20MB</small></div>
+            <img id="creatorImage" alt="上传图片预览" hidden />
+            <button id="replaceImageBtn" type="button" hidden>更换图片</button>
+          </label>
+        </article>
+
+        <article class="creator-card generation-card">
+          <div class="card-number">02</div>
+          <h2>选择视频氛围</h2>
+          <p>选择一个动作方向，系统会自动完成主体识别、动作匹配与画面生成。</p>
+          <div class="style-options" id="styleOptions">
+            <button class="active" data-style="温暖互动" type="button"><span>☀</span><strong>温暖互动</strong><small>自然柔和</small></button>
+            <button data-style="活力玩耍" type="button"><span>✦</span><strong>活力玩耍</strong><small>轻快生动</small></button>
+            <button data-style="电影质感" type="button"><span>◐</span><strong>电影质感</strong><small>细腻光影</small></button>
+          </div>
+          <button class="generate-button" id="generateVideoBtn" type="button" disabled><span>✦</span> 一键生成视频</button>
+          <div class="generation-progress" id="generationProgress" hidden>
+            <div><span></span></div><p>正在分析主体与生成动作… <b>0%</b></p>
+          </div>
+        </article>
+      </div>
+
+      <article class="result-card">
+        <div class="result-heading"><div><span class="card-number">03</span><h2>生成结果</h2></div><span id="resultStatus">等待生成</span></div>
+        <div class="result-stage" id="resultStage">
+          <div class="result-empty" id="resultEmpty"><span>▶</span><strong>生成的视频将在这里展示</strong><small>请先上传图片并点击“一键生成视频”</small></div>
+          <video id="resultVideo" controls loop playsinline hidden></video>
+        </div>
+        <div class="result-actions" id="resultActions" hidden>
+          <button class="secondary-button" id="regenerateBtn" type="button">重新生成</button>
+          <a class="primary-button" id="useVideoBtn" href="./experience.html?mode=pet">用于互动体验</a>
+        </div>
+      </article>
+    </section>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="./main.js"></script>
+</body>
+</html>

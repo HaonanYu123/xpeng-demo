@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="登录小鹏陪伴空间" />
+  <title>登录 - 小鹏陪伴空间</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="login-page">
+  <nav class="site-nav login-nav">
+    <a class="brand" href="./index.html">
+      <img class="brand-logo" src="./assets/xpeng-logo.png" alt="XPENG 小鹏汽车" />
+      <span>陪伴空间</span>
+    </a>
+    <span class="login-nav-title">小鹏账号登录</span>
+    <a class="back-link" href="./index.html">返回首页</a>
+  </nav>
+
+  <main class="login-main">
+    <section class="login-card" aria-labelledby="loginTitle">
+      <img class="login-brand-logo" src="./assets/xpeng-logo.png" alt="" aria-hidden="true" />
+      <h1 id="loginTitle">欢迎登录</h1>
+      <p class="login-subtitle">登录小鹏账号，开始你的陪伴互动体验</p>
+
+      <form id="loginForm" novalidate>
+        <label class="login-label" for="phoneInput">手机号</label>
+        <div class="phone-field">
+          <span class="country-code">+86</span>
+          <input id="phoneInput" name="phone" type="tel" inputmode="numeric" maxlength="11" autocomplete="tel" placeholder="请输入手机号" />
+        </div>
+        <p class="field-error" id="phoneError"></p>
+
+        <label class="login-label" for="codeInput">验证码</label>
+        <div class="code-field">
+          <input id="codeInput" name="code" type="text" inputmode="numeric" maxlength="6" autocomplete="one-time-code" placeholder="请输入 6 位验证码" />
+          <button class="code-button" id="sendCodeBtn" type="button">获取验证码</button>
+        </div>
+        <p class="field-error" id="codeError"></p>
+
+        <label class="agreement">
+          <input id="agreementInput" type="checkbox" />
+          <span>我已阅读并同意<a href="#">用户协议</a>和<a href="#">隐私政策</a></span>
+        </label>
+
+        <button class="login-submit" type="submit">登录并开始体验</button>
+      </form>
+
+      <div class="other-login">
+        <span>其他登录方式</span>
+        <a class="xpeng-login-entry" href="https://www.xiaopeng.com/" target="_blank" rel="noopener noreferrer" aria-label="小鹏汽车账号登录">
+          <img src="./assets/xpeng-logo.png" alt="" />
+        </a>
+        <small>小鹏汽车账号</small>
+      </div>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="./login.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="连接设备、创建档案并开始沉浸式互动" />
+  <title>互动体验 - 小鹏陪伴空间</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="flow-page">
+  <nav class="site-nav" aria-label="主导航">
+    <a class="brand" href="./index.html"><img class="brand-logo" src="./assets/xpeng-logo.png" alt="XPENG" /><span>陪伴空间</span></a>
+    <div class="nav-links">
+      <a class="active" href="./index.html#experiences">互动体验</a>
+      <a href="./upload.html?mode=pet">内容创作</a>
+      <a href="./community.html">用户社区</a>
+    </div>
+    <a class="back-link" href="./index.html">退出体验</a>
+  </nav>
+
+  <main class="flow-main">
+    <header class="flow-header">
+      <div>
+        <span class="mode-pill" id="modePill">宠物互动</span>
+        <h1 id="flowTitle">和熟悉的小家伙，再玩一会儿。</h1>
+        <p id="flowSubtitle">完成三个简单步骤，即可开始沉浸式互动。</p>
+      </div>
+      <div class="mode-switch" aria-label="切换互动模式">
+        <a data-mode-link="pet" href="./experience.html?mode=pet">宠物</a>
+        <a data-mode-link="family" href="./experience.html?mode=family">亲友</a>
+      </div>
+    </header>
+
+    <div class="flow-layout">
+      <aside class="step-nav" aria-label="体验步骤">
+        <button class="step-item active" data-step="1" type="button">
+          <span>1</span><div><small>STEP 01</small><strong>连接设备</strong></div><i>✓</i>
+        </button>
+        <button class="step-item" data-step="2" type="button">
+          <span>2</span><div><small>STEP 02</small><strong id="profileStepName">创建宠物档案</strong></div><i>✓</i>
+        </button>
+        <button class="step-item" data-step="3" type="button">
+          <span>3</span><div><small>STEP 03</small><strong id="interactionStepName">宠物互动</strong></div><i>✓</i>
+        </button>
+      </aside>
+
+      <section class="flow-content">
+        <article class="flow-panel active" data-panel="1">
+          <div class="panel-heading"><span>01</span><div><h2>连接投影设备</h2><p>确保车辆已启动，车载投影设备处于可连接状态。</p></div></div>
+          <div class="device-stage">
+            <div class="device-radar">
+              <span class="radar-ring ring-one"></span><span class="radar-ring ring-two"></span>
+              <div class="device-icon"><span></span><b></b></div>
+            </div>
+            <div class="device-info">
+              <small>附近设备</small>
+              <strong>XPENG HoloScreen · 01</strong>
+              <span id="deviceStatus"><i></i> 等待连接</span>
+            </div>
+          </div>
+          <div class="connection-note"><span>i</span><p>首次连接时，请在中控屏确认配对。演示模式无需真实设备即可继续体验。</p></div>
+          <button class="primary-button panel-action" id="connectBtn" type="button">扫描并连接设备</button>
+        </article>
+
+        <article class="flow-panel" data-panel="2">
+          <div class="panel-heading"><span>02</span><div><h2 id="profileTitle">创建宠物档案</h2><p>上传清晰的图片和视频，建立专属互动素材库。</p></div></div>
+          <div class="profile-grid">
+            <label class="media-uploader image-uploader" for="profileImage">
+              <input id="profileImage" type="file" accept="image/*" />
+              <div class="media-placeholder" id="imagePlaceholder"><b>＋</b><strong>上传图片</strong><span>JPG、PNG，建议正面完整入镜</span></div>
+              <img id="profileImagePreview" alt="档案图片预览" hidden />
+            </label>
+            <label class="media-uploader video-uploader" for="profileVideo">
+              <input id="profileVideo" type="file" accept="video/*" />
+              <div class="media-placeholder" id="videoPlaceholder"><b>▶</b><strong>上传视频</strong><span>MP4、MOV，建议 5–30 秒</span></div>
+              <video id="profileVideoPreview" muted loop playsinline controls hidden></video>
+            </label>
+          </div>
+          <div class="profile-fields">
+            <label><span id="nameLabel">宠物昵称</span><input id="profileName" type="text" maxlength="16" placeholder="例如：豆包" /></label>
+            <label><span id="relationLabel">与我的关系</span><select id="profileRelation"><option>我的宠物</option><option>家人的宠物</option><option>共同陪伴的伙伴</option></select></label>
+          </div>
+          <button class="primary-button panel-action" id="saveProfileBtn" type="button">保存档案并继续</button>
+        </article>
+
+        <article class="flow-panel" data-panel="3">
+          <div class="panel-heading interaction-heading"><span>03</span><div><h2 id="interactionTitle">宠物互动</h2><p>点击动作按钮，立即播放对应的互动影像。</p></div><span class="online-badge"><i></i> 设备在线</span></div>
+          <div class="interaction-stage">
+            <video id="interactionVideo" playsinline preload="metadata" poster="./assets/pet-interaction.png"></video>
+            <div class="video-idle" id="videoIdle"><span>✦</span><strong>选择一个互动动作</strong><small>影像将在这里开始播放</small></div>
+            <div class="now-playing" id="nowPlaying" hidden><i></i><span>正在播放 · <b></b></span></div>
+          </div>
+          <div class="interaction-actions" id="interactionActions">
+            <button data-video="./assets/喂食.mp4" data-action="喂食" type="button"><span>◒</span><strong>喂食</strong><small>准备最爱的零食</small></button>
+            <button data-video="./assets/抚摸.mp4" data-action="抚摸" type="button"><span>≈</span><strong>抚摸</strong><small>轻轻摸摸它</small></button>
+            <button data-video="./assets/握手.mp4" data-action="握手" type="button"><span>✦</span><strong>握手</strong><small>熟悉的小默契</small></button>
+            <button data-video="./assets/玩耍.mp4" data-action="玩耍" type="button"><span>⌁</span><strong>玩耍</strong><small>一起快乐玩耍</small></button>
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="./experience.js"></script>
+</body>
+</html>

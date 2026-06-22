@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="小鹏沉浸式陪伴互动体验" />
+  <title>小鹏陪伴空间</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="landing-page">
+  <nav class="site-nav" aria-label="主导航">
+    <a class="brand" href="./index.html" aria-label="返回首页">
+      <img class="brand-logo" src="./assets/xpeng-logo.png" alt="XPENG 小鹏汽车" />
+      <span>陪伴空间</span>
+    </a>
+    <div class="nav-links">
+      <a class="active" href="./index.html#experiences">互动体验</a>
+      <a href="./upload.html?mode=pet">内容创作</a>
+      <a href="./community.html">用户社区</a>
+    </div>
+    <a class="nav-action" href="./login.html">开始体验</a>
+  </nav>
+
+  <main>
+    <header class="landing-hero">
+      <span class="hero-badge">XPENG IMMERSIVE COMPANION</span>
+      <h1>让想念，以新的方式相见。</h1>
+      <p>连接车载投影设备，创建专属档案，让熟悉的陪伴在光影中重新鲜活。</p>
+      <div class="hero-actions">
+        <a class="primary-button" href="#experiences">选择体验</a>
+      </div>
+    </header>
+
+    <section class="experience-section" id="experiences">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">选择陪伴对象</span>
+          <h2>从一段珍贵影像开始</h2>
+        </div>
+        <p>两种体验使用相同的设备连接与档案流程，完成后即可进入实时互动。</p>
+      </div>
+
+      <div class="experience-grid">
+        <a class="experience-card pet-card" href="./experience.html?mode=pet">
+          <img src="./assets/pet-interaction.png" alt="两只金毛幼犬" />
+          <span class="card-overlay"></span>
+          <span class="card-copy">
+            <small>温暖陪伴</small>
+            <strong>宠物互动</strong>
+            <span>喂食、抚摸、握手、玩耍</span>
+            <em>开始体验 →</em>
+          </span>
+        </a>
+
+        <a class="experience-card family-card" href="./experience.html?mode=family">
+          <img src="./assets/family-interaction.png" alt="一家人在客厅中互动" />
+          <span class="card-overlay"></span>
+          <span class="card-copy">
+            <small>珍藏时光</small>
+            <strong>亲友互动</strong>
+            <span>用熟悉的动作唤醒共同记忆</span>
+            <em>开始体验 →</em>
+          </span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <img src="./assets/xpeng-logo.png" alt="" />
+    <span>XPENG · 用影像连接每一份珍贵陪伴</span>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
